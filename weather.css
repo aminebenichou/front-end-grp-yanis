@@ -1,0 +1,135 @@
+*{
+    font-family: "Montserrat", sans-serif;
+}
+body{
+    background-color: rgba(255, 255, 255, 0.967);
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    display: flex;
+    padding: 100px;
+    justify-content: space-between;
+}
+
+.logo p{
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.search-card{
+    width: 30vw;
+}
+.search-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar input{
+    width: 100%;
+    border: none;
+    height: 40px;
+    font-size: larger;
+    background-color: rgba(255, 255, 255, 0.967);
+
+}
+.search-bar input:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.search-stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sub-stats{
+    width: 100%;
+}
+
+.sub-stats * {
+  display: flex;
+  width: 150%;
+  justify-content: space-between;
+  margin-right: 50px;
+    
+}
+
+.title{
+    color: gray;
+}
+.digit{
+    font-size: large;
+    font-weight: 500;
+}
+
+
+.day-details{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.hour-detail{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.hour-detail svg{
+    font-size: 40px;
+    color: yellow;
+}
+
+.time{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.hour{
+    font-size: xx-large;
+}
+.minutes{
+    margin-top: 5px;
+    margin-left: 2px;
+    font-size: small;
+    color: gray;
+}
+
+
+.main-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    /* justify-content: end; */
+    width: 30vw;
+}
+.main-right svg{
+    color: yellow;
+
+}
+.main-right p{
+    font-size: 100px;
+}    
+
+.card{
+    margin: 50px;
+    height: 300px;
+    width: 100px;
+    border: 0.2px solid gray;
+
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.132);
+}
