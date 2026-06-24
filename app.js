@@ -555,3 +555,34 @@ console.log(paragraph);
 
 const video_title=document.getElementsByClassName("vid-title")[0]
 video_title.innerHTML = mock_videos.videos[0].title
+const thumbnail=document.getElementsByClassName("thumbnail")[0]
+thumbnail.src = mock_videos.videos[0].thumbnails[1].url
+
+const channel_name= document.getElementsByClassName("channel-name")[0]
+channel_name.innerHTML = mock_videos.videos[0].author
+const video_views= document.getElementsByClassName("video-views")[0]
+video_views.innerHTML = mock_videos.videos[0].number_of_views + " views"
+
+const videos=document.getElementsByClassName("videos")[0]
+var html_videos=""
+
+mock_videos.videos.forEach((video)=>html_videos+=`
+  <div class="video">
+                <img class="thumbnail" src=${video.thumbnails[1].url}
+                    alt="">
+                <div class="vid-info">
+                    <img src="https://yt3.ggpht.com/xJoq2CjGxYMHeNje60pgQpcUaQ1r2Z3DUDNANIUGG-J80kZqfhG_8Z4EFan3yh7t9mhFSp-6=s68-c-k-c0x00ffffff-no-rj"
+                        alt="">
+                    <div>
+                        <p class="vid-title"> ${video.title} </p>
+                        <a class="channel-name" href="">${video.author}</a>
+                        <div class="vid-stats">
+                            <p class="video-views">${video.number_of_views} views</p>
+                            <p> ${video.published_time} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+`)
+
+videos.innerHTML = html_videos
