@@ -23,7 +23,7 @@ export default function CustomButton(props: ButtonProps) {
 
     return (
         <div>
-            {!props.isfolder ? <Button className="flex cursor-pointer bg-transparent hover:bg-gray-800 hover:text-white rounded-md text-gray-900 m-1 text-lg p-5">
+            {!props.isfolder ? <Button className="flex items-center justify-start cursor-pointer w-56 bg-transparent hover:bg-gray-800 hover:text-white rounded-md text-gray-900 m-1 text-lg p-5">
 
                 {props.Prefix}
                 <span>
