@@ -1,13 +1,19 @@
 'use client'
 
+import { useEffect, useState } from "react";
 import Header from "./components/header";
 import NavBar from "./components/NavBar";
 import NoteCard from "./components/NoteCard";
+import axios from "axios";
 
 export default function Home() {
 
- 
-
+  const [notes, setNotes] = useState([])
+  useEffect(()=>{
+    axios.get('/api/get-note').then((resp:any)=>setNotes(resp.data))
+  }, [])
+  console.log(notes);
+  
   return (
     <div>
       <Header title="Notes" defaultValue="Today" tabs={[
@@ -16,18 +22,13 @@ export default function Home() {
         {title:"This month"},
       ]} />
       <div className="flex flex-wrap">
-        <NoteCard color="amber" text="
-      Lorem ipsum dolor sit amet consectetur,  veritatis aliquam qui! Porro obcaecati quaerat aliquid veniam?" />
+
+        {
+          notes.map((note:any, index:number)=><NoteCard key={index} color="amber" text={note.title} />
+        )
+        }
         
-        <NoteCard color="green" text="
-      Lorem ipsum dolor sit amet consectetur,  veritatis aliquam qui! Porro obcaecati quaerat aliquid veniam?" />
-        
-        <NoteCard color="purple" text="
-      Lorem ipsum dolor sit amet consectetur,  veritatis aliquam qui! Porro obcaecati quaerat aliquid veniam?" />
-        
-        <NoteCard color="blue" text="
-      Lorem ipsum dolor sit amet consectetur,  veritatis aliquam qui! Porro obcaecati quaerat aliquid veniam?" />
-        
+         
        
       </div>
       <Header title="Recent Folders" defaultValue="All" tabs={[

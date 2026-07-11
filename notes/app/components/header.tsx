@@ -18,7 +18,6 @@ const Header = (props: headerProps) => {
             <Tabs defaultValue={props.defaultValue} className="w-100">
                 <TabsList className='bg-gray-300 py-1'>
                     {
-
                         props.tabs?.map((tab:any, index:number) => <TabsTrigger key={index} className='mx-2 px-5' value={tab.title}>{tab.title}</TabsTrigger>)
                     }
                 </TabsList>

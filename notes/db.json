@@ -1,0 +1,25 @@
+{
+  "notes": [
+    {
+      "title": "hello",
+      "description": "hello two",
+      "id": "x-yW4TYLWq8"
+    },
+    {
+      "title": "hello",
+      "description": "hello two",
+      "id": "2D-RvJudA0M"
+    },
+    {
+      "title": "hello",
+      "description": "hello two",
+      "id": "CDiRQ7X5_8U"
+    },
+    {
+      "title": "hello",
+      "description": "hello two",
+      "id": "_DO31MSTiTw"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
