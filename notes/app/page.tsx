@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header title="Notes" tabs={[
+      <Header title="Notes" defaultValue="Today" tabs={[
         {title:"Today"},
         {title:"This week"},
         {title:"This month"},
@@ -30,7 +30,7 @@ export default function Home() {
         
        
       </div>
-      <Header title="Recent Folders" tabs={[
+      <Header title="Recent Folders" defaultValue="All" tabs={[
         {title:"All"},
         {title:"Recent"},
         {title:"Last modified"},
