@@ -1,10 +1,9 @@
 'use client'
-
 import { useEffect, useState } from "react";
 import Header from "./components/header";
-import NavBar from "./components/NavBar";
 import NoteCard from "./components/NoteCard";
 import axios from "axios";
+import { Loader2Icon } from "lucide-react";
 
 export default function Home() {
 
@@ -21,11 +20,12 @@ export default function Home() {
         {title:"This week"},
         {title:"This month"},
       ]} />
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap w-full">
 
         {
-          notes.map((note:any, index:number)=><NoteCard key={index} color="amber" text={note.title} />
-        )
+         notes.length===0 ? <center>
+          <Loader2Icon className="animate-spin" />
+         </center> :  notes.map((note:any, index:number)=><NoteCard key={index} color="amber" text={note.title} />)
         }
         
          

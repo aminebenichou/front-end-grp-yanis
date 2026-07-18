@@ -9,11 +9,17 @@ import { Textarea } from "@/components/ui/textarea";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const NavBar = () => {
+interface navbarProps {
+  callback?: ()=>void
+}
+
+const NavBar = (props:navbarProps) => {
   const [addingNote, setAddingNote] = useState(false)
+  const [data, setData] = useState({})
   function AddNote() {
-    axios.post("/api/create-note/")
-    
+    axios.post("/api/create-note/",data)
+    console.log(data);
+    props.callback
     setAddingNote(false)
   }
 
@@ -61,9 +67,11 @@ const NavBar = () => {
           </DialogHeader>
 
           <form className="flex flex-col items-center justify-center">
-            <Input placeholder="Title" className="my-5 mx-5" />
-            <Textarea rows={30} placeholder="Description" />
-            <Button onClick={()=>{setAddingNote(true)}} className="bg-blue-900 my-5 text-white hover:bg-blue-700 font-bold">Add</Button>
+            <Input placeholder="Title" className="my-5 mx-5" onChange={(e)=>setData({...data, title:e.target.value})} />
+            <Textarea rows={30} placeholder="Description" onChange={(e)=>setData({...data, description:e.target.value})} />
+            <Button onClick={(e)=>{
+              e.preventDefault()
+              setAddingNote(true)}} className="bg-blue-900 my-5 text-white hover:bg-blue-700 font-bold">Add</Button>
           </form>
           
         </DialogContent>

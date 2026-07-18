@@ -1,11 +1,14 @@
 import axios from "axios";
 import { NextResponse } from "next/server";
 
-export async function POST() {
+export async function POST(request: Request) {
+  const url = process.env.BACKEND_URL ?? "localhost"
+  const body = await request.json()
+  console.log(body);
   try {
-    const response = await axios.post("http://localhost:3000/notes", {
-      title: "hello",
-      description: "hello two",
+    const response = await axios.post(`${url}/notes`, {
+      title: body.title,
+      description: body.description,
     });
 
     return NextResponse.json(response.data);
